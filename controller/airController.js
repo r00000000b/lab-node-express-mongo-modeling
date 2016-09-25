@@ -64,23 +64,24 @@ terminal1.save(function(err){
     console.log(err);
     return;
   };
-  console.log('Terminal Entry Created');
-  console.log(terminal1);
 
-    Airport.find({}, function(err, airports){
+  Airport.find({}, function(err, airports){
+    if (err) {
+      console.log(err);
+      return;
+    };
+    airports[0].terminal.push(terminal1);
+
+    airports[0].save(function(err){
       if (err) {
         console.log(err);
         return;
-      };
-      airports[0].terminal.push(terminal1);
-
-      airports[0].save(function(err){
-        if (err) {
-          console.log(err);
-          return;
-        }
-        console.log('Airport Entry updated with Terminal info');
-        console.log(airports);
-      })
+      }
+      console.log('Airport Entry updated with Terminal info');
+      console.log(airports);
     })
+  })
+
+  console.log('Terminal Entry Created');
+  console.log(terminal1);
 });
