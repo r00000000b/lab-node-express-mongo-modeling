@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 // connect mongoDB
-const db = 'mongodb://localhost/airport'; // create / use airport db
+const db = 'mongodb://localhost/flight';
 mongoose.connect(db);
 
 require('./controller/airController');

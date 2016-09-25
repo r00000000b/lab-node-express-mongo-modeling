@@ -4,7 +4,7 @@ var flightSchema = new mongoose.Schema({
   from: String,
   to: String,
   airline: String,
-  passengers: [passengers], //MAKE SURE TO get this array from exported PASSENGER.JS
+  passengers: [] //MAKE SURE TO get this array from exported PASSENGER.JS
 },{
   timestamps: true
 });

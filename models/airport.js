@@ -3,7 +3,7 @@ const mongoose = require('mongoose'); //include mongoose module
 var airportSchema = new mongoose.Schema({
   name: String,
   country: String,
-  terminals: [terminals], //MAKE SURE TO get this array from exported TERMINAL.JS
+  terminal: [], //MAKE SURE TO get this array from exported TERMINAL.JS
   opened: Date
 },{
   timestamps: true
