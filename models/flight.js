@@ -4,7 +4,7 @@ var flightSchema = new mongoose.Schema({
   from: String,
   to: String,
   airline: String,
-  passengers: [] //MAKE SURE TO get this array from exported PASSENGER.JS
+  passengers: [{ type: mongoose.Schema.ObjectId, ref: 'Passenger'}] //you are only referencing the passenger and only referencing the ID.
 },{
   timestamps: true
 });

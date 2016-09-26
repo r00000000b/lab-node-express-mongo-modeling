@@ -41,7 +41,7 @@ var airport1 = Airport({
   name: 'JFK',
   country: 'USA',
   terminal: [],
-  opened: '1948-07-01T00:00:00Z'
+  opened: '1948-07-01T00:00:00Z' //could've used ((newDate()).setYear(1990))
 })
 
 airport1.save(function(err){
@@ -81,6 +81,15 @@ terminal1.save(function(err){
       console.log(airports);
     })
   })
+
+  /*
+  // Jen's solution to importing the terminal into airports
+  airports.terminal.push({
+    name: 'Terminal 1',
+    flights: [flight1, flight2],
+    capacity: 234324
+  });
+  */
 
   console.log('Terminal Entry Created');
   console.log(terminal1);

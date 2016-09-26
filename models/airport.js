@@ -1,9 +1,11 @@
 const mongoose = require('mongoose'); //include mongoose module
 
+var Terminal = mongoose.model("Terminal");
+
 var airportSchema = new mongoose.Schema({
   name: String,
   country: String,
-  terminal: [], //MAKE SURE TO get this array from exported TERMINAL.JS
+  terminal: [Terminal.schema], //MAKE SURE TO get this array from exported TERMINAL.JS
   opened: Date
 },{
   timestamps: true
